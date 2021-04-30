@@ -1,0 +1,55 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/articles",
+      "handler": "articles.find",
+      "config": {
+        "policies": [
+          "global::user-is-logged-in",
+          "local-demo"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/articles/count",
+      "handler": "articles.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/articles/:id",
+      "handler": "articles.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/articles",
+      "handler": "articles.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/articles/:id",
+      "handler": "articles.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/articles/:id",
+      "handler": "articles.delete",
+      "config": {
+        "policies": ["global::always-fail"]
+      }
+    }
+  ]
+}

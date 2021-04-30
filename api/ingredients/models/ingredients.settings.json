@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ingredients",
+  "info": {
+    "name": "ingredients"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ingredient": {
+      "type": "string"
+    },
+    "recipes": {
+      "via": "ingredients",
+      "collection": "recipes"
+    }
+  }
+}
